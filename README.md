@@ -8,7 +8,9 @@
 
 `$ npx tsc`
 
-### Algorithm list
+## Algorithm list
+
+### Problem Solving Pattern
 
 - [x] Sum of certain number
 - [x] Character Counter
@@ -17,3 +19,16 @@
 - [x] Count Unique Values
 - [x] Sliding Window Pattern
 - [x] Divide and Conquer Pattern
+
+### Recursion
+
+- [x] Count Down
+- [x] Factorial
+- [x] Collect Odd Values
+- [x] Power
+- [x] Multiply Values of Array
+- [x] Sum All of Range of Numbers
+- [x] Fibonacci
+- [x] Reverse String
+- [x] Palindrome
+- [x] Flatten
