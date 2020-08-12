@@ -99,4 +99,17 @@ const multiplyValues = (arr: number[]): number => {
 	return arr[0] * multiplyValues(arr.slice(1));
 };
 
-console.log(multiplyValues([]));
+//console.log(multiplyValues([]));
+
+// 6. Write a function which accepts a number and adds up to all the numbers
+// from 0 to the number passed to the function.
+
+// (5) return 15 because 0+1+2+3+4+5=15
+// (10) return 55
+
+const sumAllNumbers = (num: number): number => {
+	if (num <= 0) return 0;
+	return num + sumAllNumbers(num - 1);
+};
+
+console.log(sumAllNumbers(-1));
