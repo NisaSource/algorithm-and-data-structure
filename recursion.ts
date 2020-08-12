@@ -166,3 +166,30 @@ const isPalindrome = (str: string): boolean => {
 // console.log(isPalindrome('aa'));
 // console.log(isPalindrome('phone'));
 // console.log(isPalindrome('nababan'));
+
+// 10. Write a function which accepts an array of arrays
+// and return a new array with all values flattened.
+
+// flatten([1,2, [3], 4]) return [1,2,3,4]
+//flatten([1, [2,3], 4,[5, [6], 7]]) return [1,2,3,4,5,6,7]
+
+interface DeepArray<T> extends Array<T | DeepArray<T>> {}
+type NestedArray = DeepArray<number>;
+
+const flatten = (arr: NestedArray): number[] => {
+	let newArr = [];
+
+	if (!Array.isArray(arr) || arr.length === 0) return newArr;
+
+	for (let i = 0; i < arr.length; i++) {
+		if (Array.isArray(arr[i])) {
+			newArr = newArr.concat(flatten(arr[i] as NestedArray));
+		} else {
+			newArr.push(arr[i]);
+		}
+	}
+	return newArr;
+};
+
+// console.log(flatten([1, 2, [3], 4]));
+// console.log(flatten([1, [2, 3], 4, [5, [6], 7]]));
