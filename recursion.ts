@@ -69,4 +69,20 @@ const oddNumbers = (arr: number[]): number[] => {
 	return newArr;
 };
 
-console.log(oddNumbers([1, 2, 3, 4, 5]));
+//console.log(oddNumbers([1, 2, 3, 4, 5]));
+
+// 4. Write a function which accepts a base and an exponent.
+// It should return the power of the base to the exponent.
+
+// (2,0) // 1
+// (2,4) // 16
+
+const power = (num: number, exp: number): number => {
+	if (exp <= 0) {
+		return 1;
+	} else {
+		return num * power(num, exp - 1);
+	}
+};
+
+console.log(power(2, 4));
