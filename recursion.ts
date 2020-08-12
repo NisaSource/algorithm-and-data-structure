@@ -142,4 +142,27 @@ const reverseString = (str: string): string => {
 	return reverseString(str.slice(1)) + str[0];
 };
 
-console.log(reverseString('o'));
+//console.log(reverseString('o'));
+
+// 9. Write a function which returns true if the string passed to it
+// is a palindrome.
+
+// isPalindrome("phone") return false
+// isPalindrome("nababan") return true
+// isPalindrome('aa') return true
+
+const isPalindrome = (str: string): boolean => {
+	if (str.length === 1) {
+		return true;
+	} else if (str.length === 2) {
+		return str[0] === str[1];
+	} else if (str[0] === str.slice(-1)) {
+		return isPalindrome(str.slice(1, -1));
+	} else {
+		return false;
+	}
+};
+
+// console.log(isPalindrome('aa'));
+// console.log(isPalindrome('phone'));
+// console.log(isPalindrome('nababan'));
