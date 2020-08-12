@@ -85,4 +85,18 @@ const power = (num: number, exp: number): number => {
 	}
 };
 
-console.log(power(2, 4));
+//console.log(power(2, 4));
+
+// 5. Write a function which takes an array of numbers and returns multiply of all the values.
+
+// [1,2,3] return 6
+// [1,2,3,5] return 30
+// [] return 0;
+
+const multiplyValues = (arr: number[]): number => {
+	if (!Array.isArray(arr) || arr.length === 0) return 1;
+
+	return arr[0] * multiplyValues(arr.slice(1));
+};
+
+console.log(multiplyValues([]));
