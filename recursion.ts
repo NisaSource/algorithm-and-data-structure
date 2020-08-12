@@ -112,4 +112,34 @@ const sumAllNumbers = (num: number): number => {
 	return num + sumAllNumbers(num - 1);
 };
 
-console.log(sumAllNumbers(-1));
+//console.log(sumAllNumbers(-1));
+
+// 7. Write a recursive function which accepts a number and return the nth number
+// in the Fibonacci sequence.
+
+// (10) return 55
+// (28) return 317811
+
+const fibonacci = (num: number): number => {
+	if (num <= 0) {
+		return null;
+	} else if (num === 1) {
+		return 1;
+	} else {
+		return fibonacci(num - 1) + fibonacci(num - 2);
+	}
+};
+
+//console.log(fibonacci(0));
+
+// 8. Write a recursive function which accepts a string and returns a new string reverse.
+
+// reverseString("dog") return "god"
+// reverseString("amazing") return "gnizama"
+
+const reverseString = (str: string): string => {
+	if (str.length <= 1) return str;
+	return reverseString(str.slice(1)) + str[0];
+};
+
+console.log(reverseString('o'));
