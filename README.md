@@ -32,3 +32,8 @@
 - [x] Reverse String
 - [x] Palindrome
 - [x] Flatten
+
+### Recursion
+
+- [x] Linear Search
+- [x] Binary Search
