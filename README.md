@@ -33,7 +33,7 @@
 - [x] Palindrome
 - [x] Flatten
 
-### Recursion
+### Search Algorithm
 
 - [x] Linear Search
 - [x] Binary Search
