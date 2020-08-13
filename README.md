@@ -37,3 +37,9 @@
 
 - [x] Linear Search
 - [x] Binary Search
+
+### Sort Algorithm
+
+- [x] Bubble Sort
+- [x] Selection Sort
+- [x] Insertion Sort
