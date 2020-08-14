@@ -1,0 +1,23 @@
+{
+	"name": "algorithm-and-data-structure",
+	"version": "1.0.0",
+	"description": "#### Install TypeScript via npm",
+	"main": "sortAlgorithm.js",
+	"scripts": {
+		"start": "tsc && node dist/sortAlgorithm.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NisaSource/algorithm-and-data-structure.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NisaSource/algorithm-and-data-structure/issues"
+	},
+	"homepage": "https://github.com/NisaSource/algorithm-and-data-structure#readme",
+	"devDependencies": {
+		"tslint": "^6.1.3",
+		"typescript": "^3.9.7"
+	}
+}

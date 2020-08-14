@@ -174,4 +174,19 @@ const quickSort = ({
 	return arr;
 };
 
-console.log(quickSort({ arr: [2, 4, 8, 11, 1, 3, 5, 6, 7, 15] }));
+//console.log(quickSort({ arr: [2, 4, 8, 11, 1, 3, 5, 6, 7, 15] }));
+
+// 6. Radix Sort
+// No comparing on this sort. It uses list based on the code.
+
+// Get the digit
+const getDigit = (num: number, i: number): number => {
+	return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+};
+
+// Count digits in num
+const countDigit = (num: number): number => {
+	if (num === 0) return 1;
+	return Math.floor(Math.log10(Math.abs(num))) + 1;
+};
+console.log('sdfsd', countDigit(20));
