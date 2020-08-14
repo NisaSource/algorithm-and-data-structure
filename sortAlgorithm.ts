@@ -69,3 +69,64 @@ const insertionSort = (arr: number[] | string[]): number[] | string[] => {
 
 // console.log(insertionSort([3, 2, 5, 4, 1]));
 // console.log(insertionSort(['c', 'a', 'b', 'e', 'd']));
+
+// Bubble Sort, Selection Sort and Insertion Sort are perfect to use
+// if the length of the array is less than 20.
+// For the larger array, try the Sorts below.
+
+// 4. Merge Sort (Split, sort, merge)
+// Split up the array into smallest array until 1 element left,
+// then compare the array and sort them, then merge it together after it sorted.
+
+const mergeArr = (
+	arr1: number[] | string[],
+	arr2: number[] | string[]
+): number[] | string[] => {
+	let result = [];
+	let i = 0;
+	let j = 0;
+	while (i < arr1.length && j < arr2.length) {
+		// compare the elements
+		if (arr1[i] < arr2[j]) {
+			result.push(arr1[i]);
+			i++;
+		} else {
+			result.push(arr2[j]);
+			j++;
+		}
+	}
+
+	// check if there is any item left in the arr, then push the elemetns in to result.
+	while (i < arr1.length) {
+		result.push(arr1[i]);
+		i++;
+	}
+	while (j < arr2.length) {
+		result.push(arr2[j]);
+		j++;
+	}
+
+	return result;
+};
+
+//console.log(mergeArr([2, 4, 8, 11], [1, 3, 5, 6, 7, 15]));
+
+const mergeSort = (arr: number[] | string[]): number[] | string[] => {
+	//check if the user input array
+	if (!Array.isArray(arr)) return null;
+	else if (arr.length <= 1) return arr;
+
+	// Because we will split up the array in to 2 arrays, so we set the middle point
+	let midPoint = Math.floor(arr.length / 2);
+
+	// Take the first half array
+	let firstHalf = mergeSort(arr.splice(0, midPoint));
+
+	// Take the other half
+	let secondHalf = mergeSort(arr.splice(-midPoint));
+
+	// Merge
+	return mergeArr(firstHalf, secondHalf);
+};
+
+// console.log(mergeSort([2, 4, 8, 11, 1, 3, 5, 6, 7, 15]));
