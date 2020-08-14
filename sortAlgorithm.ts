@@ -1,3 +1,14 @@
+const swap = (
+	arr: number[] | string[],
+	firstIdx: number,
+	secondIdx: number
+): number[] | string[] => {
+	let temp = arr[firstIdx];
+	arr[firstIdx] = arr[secondIdx];
+	arr[secondIdx] = temp;
+	return arr;
+};
+
 // 1. Bubble Sort (O(n*n))
 // It's bubble up the highest value to the end
 
@@ -18,17 +29,6 @@ const bubbleSort = (arr: number[]): number[] => {
 
 // 2. Selection Sort
 // It places small values to the first element
-
-const swap = (
-	arr: number[] | string[],
-	firstIdx: number,
-	secondIdx: number
-): number[] | string[] => {
-	let temp = arr[firstIdx];
-	arr[firstIdx] = arr[secondIdx];
-	arr[secondIdx] = temp;
-	return arr;
-};
 
 const selectionSort = (arr: number[] | string[]): number[] | string[] => {
 	let min: number;
@@ -130,3 +130,48 @@ const mergeSort = (arr: number[] | string[]): number[] | string[] => {
 };
 
 // console.log(mergeSort([2, 4, 8, 11, 1, 3, 5, 6, 7, 15]));
+
+// 5. Quick Sort
+
+const pivot = ({
+	arr,
+	start = 0,
+	end = arr.length + 1,
+}: {
+	arr: number[] | string[];
+	start?: number;
+	end?: number;
+}): number => {
+	let pivot = arr[start];
+	let swapIndex = start;
+
+	for (let i = start + 1; i < arr.length; i++) {
+		if (pivot > arr[i]) {
+			swapIndex++;
+			swap(arr, swapIndex, i);
+		}
+	}
+	swap(arr, start, swapIndex);
+	return swapIndex;
+};
+
+const quickSort = ({
+	arr,
+	leftPoint = 0,
+	rightPoint = arr.length - 1,
+}: {
+	arr: number[] | string[];
+	leftPoint?: number;
+	rightPoint?: number;
+}): number[] | string[] => {
+	if (leftPoint < rightPoint) {
+		let pivotIdx = pivot({ arr, start: leftPoint, end: rightPoint });
+
+		quickSort({ arr, leftPoint, rightPoint: pivotIdx - 1 });
+
+		quickSort({ arr, leftPoint: pivotIdx + 1, rightPoint });
+	}
+	return arr;
+};
+
+console.log(quickSort({ arr: [2, 4, 8, 11, 1, 3, 5, 6, 7, 15] }));
