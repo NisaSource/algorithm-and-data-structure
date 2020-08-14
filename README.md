@@ -43,3 +43,5 @@
 - [x] Bubble Sort
 - [x] Selection Sort
 - [x] Insertion Sort
+- [x] Merge Sort
+- [x] Quick Sort
