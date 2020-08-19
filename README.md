@@ -45,3 +45,4 @@
 - [x] Insertion Sort
 - [x] Merge Sort
 - [x] Quick Sort
+- [x] Radix Sort
