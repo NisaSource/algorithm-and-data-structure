@@ -189,4 +189,33 @@ const countDigit = (num: number): number => {
 	if (num === 0) return 1;
 	return Math.floor(Math.log10(Math.abs(num))) + 1;
 };
-console.log('sdfsd', countDigit(20));
+//console.log(countDigit(20));
+
+// Count most digits
+const mostDigits = (arr: number[]): number => {
+	let maxDigit = 0;
+	for (let i = 0; i < arr.length; i++) {
+		maxDigit = Math.max(maxDigit, countDigit(arr[i]));
+	}
+	return maxDigit;
+};
+
+//console.log(mostDigits([23, 213, 20, 12312, 53478901]));
+
+const radixSort = (arr: number[]): number[] => {
+	let countMaxDigit = mostDigits(arr);
+	for (let i = 0; i < countMaxDigit; i++) {
+		let bucket = Array.from({ length: 10 }, () => []);
+
+		for (let j = 0; j < arr.length; j++) {
+			let digit = getDigit(arr[j], i);
+			bucket[digit].push(arr[j]);
+		}
+
+		arr = [].concat(...bucket);
+	}
+
+	return arr;
+};
+
+//console.log(radixSort([231, 23, 7658, 9012, 459812]));
